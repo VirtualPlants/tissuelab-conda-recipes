@@ -1,0 +1,36 @@
+package:
+  name: tissuelab.tissuelab
+  version: dev
+
+source:
+  git_url: https://github.com/VirtualPlants/tissuelab
+  git_tag: develop
+
+build:
+  preserve_egg_dir: True
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - openalea.deploy
+  run:
+    - python
+    - setuptools
+    - openalea.oalab
+    - openalea.components
+    - numpy
+    - scipy
+    - matplotlib ==1.5.1
+    - vtk
+    - tissuelab.cellcomplex
+    - tissuelab.timagetk
+
+
+test:
+  imports:
+    - timagetk
+
+about:
+  home: http://openalea.gforge.inria.fr/
+license: Cecill License
