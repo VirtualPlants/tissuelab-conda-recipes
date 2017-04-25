@@ -1,0 +1,10 @@
+name: tissuelab
+channels:
+  - tissuelab
+  - defaults
+dependencies:
+  - python=2.7
+  - jinja2
+  - tissuelab.tissuelab
+  - pip:
+      - pyqode.python
