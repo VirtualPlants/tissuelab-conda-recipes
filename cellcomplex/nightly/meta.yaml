@@ -1,6 +1,6 @@
 package:
   name: tissuelab.cellcomplex
-  version: nigtly
+  version: nightly
 
 source:
   git_url: https://github.com/VirtualPlants/cellcomplex
