@@ -1,0 +1,29 @@
+package:
+  name: tissuelab.cellcomplex
+  version: nigtly
+
+source:
+  git_url: https://github.com/VirtualPlants/cellcomplex
+  git_tag: develop
+
+build:
+  preserve_egg_dir: True
+  script: python setup.py install
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - openalea.deploy
+  run:
+    - python
+    - setuptools
+    - openalea.components
+
+test:
+  imports:
+    - openalea.container
+
+about:
+  home: http://virtualplants.github.io
+license: Cecill License
