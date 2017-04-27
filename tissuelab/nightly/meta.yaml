@@ -1,6 +1,6 @@
 package:
   name: tissuelab.tissuelab
-  version: dev
+  version: nightly
 
 source:
   git_url: https://github.com/VirtualPlants/tissuelab
@@ -8,6 +8,7 @@ source:
 
 build:
   preserve_egg_dir: True
+  script: python setup.py install
 
 requirements:
   build:
@@ -17,20 +18,19 @@ requirements:
   run:
     - python
     - setuptools
-    - openalea.oalab
-    - openalea.components
+    - openalea.oalab ==nightly
+    - openalea.components ==nightly
     - numpy
     - scipy
     - matplotlib ==1.5.1
     - vtk
-    - tissuelab.cellcomplex
+    - tissuelab.cellcomplex ==nightly
     - tissuelab.timagetk
-
 
 test:
   imports:
     - timagetk
 
 about:
-  home: http://openalea.gforge.inria.fr/
-license: Cecill License
+  home: http://virtualplants.github.io
+  license: Cecill License

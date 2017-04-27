@@ -1,9 +1,9 @@
 package:
-  name: tissuelab.timagetk
+  name: tissuelab.tissuelab
   version: {{ GIT_DESCRIBE_TAG }}
 
 source:
-  git_url: https://github.com/VirtualPlants/timagetk
+  git_url: https://github.com/VirtualPlants/tissuelab
   git_tag: master
 
 build:
@@ -14,15 +14,22 @@ requirements:
   build:
     - python
     - setuptools
-    - openalea.sconsx
+    - openalea.deploy
   run:
     - python
     - setuptools
     - openalea.oalab
+    - openalea.components
+    - numpy
+    - scipy
+    - matplotlib ==1.5.1
+    - vtk
+    - tissuelab.cellcomplex
+    - tissuelab.timagetk
 
 test:
   imports:
-    - openalea.oalab
+    - timagetk
 
 about:
   home: http://virtualplants.github.io
