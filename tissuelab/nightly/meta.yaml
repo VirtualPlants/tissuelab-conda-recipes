@@ -24,6 +24,7 @@ requirements:
     - scipy
     - matplotlib ==1.5.1
     - vtk
+    - zeroc-ice
     - tissuelab.cellcomplex ==nightly
     - tissuelab.timagetk
 
