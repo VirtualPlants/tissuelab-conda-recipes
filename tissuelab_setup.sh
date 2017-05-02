@@ -26,6 +26,9 @@ else
 
 
 		bash Miniconda-latest-Linux-x86_64.sh
+	        CONDA_ROOT=`conda info --root`
+	        source ${CONDA_ROOT}/bin/activate root
+
 
 	elif [ $os == "Darwin" ]
 	then
@@ -41,8 +44,6 @@ else
 
 	fi
 	
-	CONDA_ROOT=`conda info --root`
-	source ${CONDA_ROOT}/bin/activate root
 	echo "end installing conda" >> tissuelab_setup_log.txt
 	source ~/.bashrc
 fi
@@ -53,6 +54,3 @@ wget https://raw.githubusercontent.com/VirtualPlants/tissuelab-conda-recipes/mas
 conda env create -f tissuelab.yml 2>> tissuelab_setup_errors.txt
 echo "activating tissuelab" >> tissuelab_setup_log.txt
 source activate tissuelab
-echo "launching tissuelab" >> tissuelab_setup_log.txt
-oalab &
-exit(0)
