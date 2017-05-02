@@ -11,14 +11,36 @@ then
 else
 	echo "conda is not installed" >> tissuelab_setup_log.txt
 	echo "start installing conda" >> tissuelab_setup_log.txt
-	wget https://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh
+	
+	os=`uname -s`
+	if [ $os == "Linux" ]
+	then
+	
+		echo "Linux os detected" >> tissuelab_setup_log.txt 
 
-	echo "conda will now install tissuelab."
-	echo "please follow instructions on the screen by PRESSING ENTER or TYPING YES when requested by the console ..."
-	sleep 5s
+		wget https://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh
+
+		echo "conda will now install tissuelab."
+		echo "please follow instructions on the screen by PRESSING ENTER or TYPING YES when requested by the console ..."
+		sleep 5s
 
 
-	bash Miniconda-latest-Linux-x86_64.sh
+		bash Miniconda-latest-Linux-x86_64.sh
+
+	elif [ $os == "Darwin" ]
+	then
+		echo "Mac os detected" >> tissuelab_setup_log.txt         
+
+		wget https://repo.continuum.io/miniconda/Miniconda-latest-MacOSX-x86_64.sh
+	
+                echo "conda will now install tissuelab."
+                echo "please follow instructions on the screen by PRESSING ENTER or TYPING YES when requested by the console ..."
+                sleep 5s
+
+		bash Miniconda-latest-MacOSX-x86_64.sh
+
+	fi
+	
 	CONDA_ROOT=`conda info --root`
 	source ${CONDA_ROOT}/bin/activate root
 	echo "end installing conda" >> tissuelab_setup_log.txt
@@ -33,3 +55,4 @@ echo "activating tissuelab" >> tissuelab_setup_log.txt
 source activate tissuelab
 echo "launching tissuelab" >> tissuelab_setup_log.txt
 oalab &
+exit(0)
