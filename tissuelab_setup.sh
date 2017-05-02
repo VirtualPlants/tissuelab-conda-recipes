@@ -53,4 +53,10 @@ echo "downloading tissuelab.yml" >> tissuelab_setup_log.txt
 wget https://raw.githubusercontent.com/VirtualPlants/tissuelab-conda-recipes/master/tissuelab.yml 2>> tissuelab_setup_errors.txt >>tissuelab_setup_log.txt
 conda env create -f tissuelab.yml 2>> tissuelab_setup_errors.txt
 echo "activating tissuelab" >> tissuelab_setup_log.txt
-source activate tissuelab
+
+if [ $os == "Linux" ]
+then
+	source activate tissuelab
+	oalab
+fi
+
