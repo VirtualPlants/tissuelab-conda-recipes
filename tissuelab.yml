@@ -8,3 +8,4 @@ dependencies:
   - tissuelab.tissuelab
   - pip:
       - pyqode.python
+      - zeroc-ice

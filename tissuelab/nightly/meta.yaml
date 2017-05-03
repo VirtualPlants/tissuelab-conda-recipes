@@ -25,7 +25,6 @@ requirements:
     - matplotlib ==1.5.1
     - vtk
     - pillow
-    - zeroc-ice
     - tissuelab.cellcomplex ==nightly
     - tissuelab.timagetk
 
