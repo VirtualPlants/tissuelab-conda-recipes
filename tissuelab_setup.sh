@@ -66,6 +66,7 @@ fi
 	
 echo "installing tissuelab" >> tissuelab_setup_log.txt
 echo "downloading tissuelab.yml" >> tissuelab_setup_log.txt
+rm tissuelab.yml --force
 wget https://raw.githubusercontent.com/VirtualPlants/tissuelab-conda-recipes/master/tissuelab.yml 2>> tissuelab_setup_errors.txt >>tissuelab_setup_log.txt
 conda env create -f tissuelab.yml 2>> tissuelab_setup_errors.txt
 
