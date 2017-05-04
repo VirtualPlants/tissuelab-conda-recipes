@@ -1,0 +1,33 @@
+package:
+  name: zeroc-ice
+  version: "3.6.3"
+
+source:
+  fn: zeroc-ice-3.6.3.tar.gz
+  url: https://pypi.python.org/packages/d4/13/090854b3a35ce66aeba13f6722868dc1f3b113175b4d7cd1a73e29718051/zeroc-ice-3.6.3.tar.gz
+  md5: 518402167fbb7788619fac3ca641b745
+
+build:
+  script: python setup.py install
+
+requirements:
+  build:
+    - python
+    - setuptools
+
+  run:
+    - python
+
+test:
+  imports:
+    - Ice
+
+about:
+  home: https://zeroc.com
+  license: GNU General Public License v2 (GPLv2)
+  summary: 'Ice is a comprehensive RPC framework with support for Python, C++, .NET, Java, JavaScript and more.'
+  license_family: GPL2
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml
