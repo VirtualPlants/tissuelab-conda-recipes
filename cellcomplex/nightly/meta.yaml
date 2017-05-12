@@ -19,6 +19,7 @@ requirements:
     - python
     - setuptools
     - openalea.components
+    - pandas
 
 test:
   imports:
